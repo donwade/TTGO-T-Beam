@@ -2,7 +2,7 @@
 #include <LoRa.h>
 #include <Wire.h>  
 #include "SSD1306.h" 
-#include "images.h"
+//#include "images.h"  // not used, linker now stops to "save room"
 
 #define SCK     5    // GPIO5  -- SX1278's SCK
 #define MISO    19   // GPIO19 -- SX1278's MISO
@@ -59,7 +59,9 @@ void setup() {
   display.init();
   display.flipScreenVertically();  
   display.setFont(ArialMT_Plain_10);
-   
+
+  loraData(); // throw some junk out to show working display
+
   delay(1500);
 }
 
